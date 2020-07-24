@@ -72,70 +72,110 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
-                  child: Text(
-                    'Hello',
-                    style: TextStyle(
-                      fontSize: 70.0,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Montserrat'
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(15.0, 180.0, 0.0, 0.0),
-                  child: Text(
-                    'There',
-                    style: TextStyle(
-                      fontSize: 70.0,
-                      fontWeight: FontWeight.bold, fontFamily: 'Montserrat'
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(223.0, 174.0, 0.0, 0.0),
-                  child: Text(
-                    '.',
-                    style: TextStyle(
-                      fontSize: 80.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.green,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
-            child: Column(
-              children: <Widget>[
-                TextField(
-                  decoration: InputDecoration(
-                      labelText: 'EMAIL',
-                      labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
+      resizeToAvoidBottomPadding: false,
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
+                    child: Text(
+                      'Hello',
+                      style: TextStyle(
+                        fontSize: 70.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.grey
+                        fontFamily: 'Montserrat',
+                        letterSpacing: 3.5
                       ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.green
-                        )
-                      )
+                    ),
                   ),
-                )
-              ],
+                  Container(
+                    padding: EdgeInsets.fromLTRB(15.0, 180.0, 0.0, 0.0),
+                    child: Text(
+                      'There',
+                      style: TextStyle(
+                        fontSize: 70.0,
+                        fontWeight: FontWeight.bold, fontFamily: 'Montserrat', letterSpacing: 3.5
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(248.0, 174.0, 0.0, 0.0),
+                    child: Text(
+                      '.',
+                      style: TextStyle(
+                        fontSize: 80.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          )
-        ],
+            Container(
+              padding: EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
+              child: Column(
+                children: <Widget>[
+                  TextField(
+                    decoration: InputDecoration(
+                        labelText: 'EMAIL',
+                        labelStyle: TextStyle(
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.green
+                          )
+                        )
+                    ),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                        labelText: 'PASSWORD',
+                        labelStyle: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.green
+                            )
+                        )
+                    ),
+                    obscureText: true,
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Container(
+                    alignment: Alignment.topRight,
+                    padding: EdgeInsets.only(top: 20.0, left: 20.0),
+                    child: InkWell(
+                      child: Text(
+                        'Forgot password',
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Montserrat',
+                          fontSize: 16,
+                          decoration: TextDecoration.underline
+                        ),
+                      ),
+                    )
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
