@@ -1,6 +1,6 @@
-# loginsignup
+# Flutter Login and Signup
 
-A new Flutter application.
+A simple flutter login and signup screens design.
 
 ## Getting Started
 
