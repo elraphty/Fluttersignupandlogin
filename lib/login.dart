@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Signup extends StatefulWidget {
+class Login extends StatefulWidget {
   @override
-  _SignupState createState() => _SignupState();
+  _LoginState createState() => _LoginState();
 }
 
-class _SignupState extends State<Signup> {
-
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -26,9 +25,21 @@ class _SignupState extends State<Signup> {
               child: Stack(
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.fromLTRB(15.0, 150.0, 0.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
                     child: Text(
-                      'Signup',
+                      'Hello',
+                      style: TextStyle(
+                          fontSize: 70.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Montserrat',
+                          letterSpacing: 3.5
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(15.0, 180.0, 0.0, 0.0),
+                    child: Text(
+                      'There',
                       style: TextStyle(
                           fontSize: 70.0,
                           fontWeight: FontWeight.bold, fontFamily: 'Montserrat', letterSpacing: 3.5
@@ -36,7 +47,7 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.fromLTRB(282.0, 154.0, 0.0, 0.0),
+                    padding: EdgeInsets.fromLTRB(248.0, 174.0, 0.0, 0.0),
                     child: Text(
                       '.',
                       style: TextStyle(
@@ -56,21 +67,6 @@ class _SignupState extends State<Signup> {
                   TextField(
                     decoration: InputDecoration(
                         labelText: 'EMAIL',
-                        labelStyle: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey
-                        ),
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.green
-                            )
-                        )
-                    ),
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                        labelText: 'NICKNAME',
                         labelStyle: TextStyle(
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.bold,
@@ -127,13 +123,11 @@ class _SignupState extends State<Signup> {
                       color: Colors.green,
                       elevation: 7.0,
                       child: GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed('/');
-                        },
+                        onTap: () {},
                         child: Center(
                           child: Padding(
                             padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
-                            child: Text('SIGNUP',
+                            child: Text('LOGIN',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
@@ -145,6 +139,42 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 20.0,),
+                  Container(
+                    height: 50,
+                    color: Colors.transparent,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            style: BorderStyle.solid,
+                            width: 1.0,
+                          ),
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(20.0)
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Center(
+                            child: ImageIcon(AssetImage('assets/images/facebook.png')),
+                          ),
+                          Center(
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                'Log in with facebook',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Montserrat'
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -154,7 +184,7 @@ class _SignupState extends State<Signup> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('Already have an account ?',
+                Text('New to Spotify ?',
                     style: TextStyle(
                         fontFamily: 'Montserrat'
                     )
@@ -162,10 +192,10 @@ class _SignupState extends State<Signup> {
                 SizedBox(width: 5.0),
                 InkWell(
                   onTap: () {
-                    Navigator.pushReplacementNamed(context, '/');
+                    Navigator.pushNamed(context, '/signup');
                   },
                   child: Text(
-                    'Login',
+                    'Register',
                     style: TextStyle(
                         color: Colors.green,
                         fontFamily: 'Montserrat',
