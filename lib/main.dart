@@ -170,9 +170,96 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                     )
+                  ),
+                  SizedBox(height: 40,),
+                  Container(
+                    height: 50,
+                    child: Material(
+                      borderRadius: BorderRadius.circular(20.0),
+                      shadowColor: Colors.greenAccent,
+                      color: Colors.green,
+                      elevation: 7.0,
+                      child: GestureDetector(
+                        onTap: () {},
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
+                            child: Text('LOGIN',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat'
+                                )
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20.0,),
+                  Container(
+                    height: 50,
+                    color: Colors.transparent,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.black,
+                          style: BorderStyle.solid,
+                          width: 1.0,
+                        ),
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(20.0)
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Center(
+                            child: ImageIcon(AssetImage('assets/images/facebook.png')),
+                          ),
+                          Center(
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: Text(
+                                'Log in with facebook',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat'
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   )
                 ],
               ),
+            ),
+            SizedBox(
+                height: 15.0
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('New to Spotify ?',
+                    style: TextStyle(
+                      fontFamily: 'Montserrat'
+                    )
+                ),
+                SizedBox(width: 5.0),
+                InkWell(
+                  onTap: () {},
+                  child: Text(
+                    'Register',
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline
+                    ),
+                  ),
+                )
+              ],
             )
           ],
         ),
